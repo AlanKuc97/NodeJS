@@ -16,10 +16,12 @@ var leaderRouter = require('./routes/leaderRouter');
 var passport = require('passport');
 var authenticate = require('./authenticate');
 
+var config = require('./config');
+
 var app = express();
 ///////////////////////////////////////////////////////////////////////////
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/conFusion';
+const url = config.mongoUrl;
 const connect = mongoose.connect(url);
 
 connect.then((db) => {
